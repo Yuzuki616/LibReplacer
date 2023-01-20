@@ -10,9 +10,11 @@ import (
 )
 
 var config = flag.String("config", "config.json", "config file path")
+var version = "temp"
 
 func main() {
 	log.Println("LibReplacer Start")
+	log.Println("Version: ", version)
 	flag.Parse()
 	c := conf.New()
 	err := c.LoadFromPath(*config)
