@@ -1,0 +1,18 @@
+{
+  "EmbyUrl": "http://127.0.0.1:8096",
+  "BlackList": [],
+  "Addr": ":8097",
+  "EnableSsl": false,
+  "CertConfig": {
+    "Mode": "dns",
+    "Domain": "your@domain.com",
+    "DataPath": "/etc/certer",
+    "CertFile": "/etc/certer/1.pem",
+    "KeyFile": "/etc/certer/1.key",
+    "Provider": "cloudflare",
+    "Email": "test@test.com",
+    "DnsEnv": {
+      "CF_DNS_API_TOKEN": "https://go-acme.github.io/lego/dns/"
+    }
+  }
+}
