@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"LibReplacer/conf"
-	"LibReplacer/library"
+	"github.com/Yuzuki616/LibReplacer/conf"
+	"github.com/Yuzuki616/LibReplacer/library"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"

@@ -1,7 +1,7 @@
 package router
 
 import (
-	"LibReplacer/middleware"
+	"github.com/Yuzuki616/LibReplacer/middleware"
 )
 
 func (r *Router) loadRoute() {

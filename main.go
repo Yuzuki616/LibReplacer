@@ -1,11 +1,11 @@
 package main
 
 import (
-	"LibReplacer/certer"
-	"LibReplacer/conf"
-	"LibReplacer/library"
-	"LibReplacer/router"
 	"flag"
+	"github.com/Yuzuki616/LibReplacer/certer"
+	"github.com/Yuzuki616/LibReplacer/conf"
+	"github.com/Yuzuki616/LibReplacer/library"
+	"github.com/Yuzuki616/LibReplacer/router"
 	"log"
 )
 

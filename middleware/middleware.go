@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"LibReplacer/handler"
-	"LibReplacer/library"
+	"github.com/Yuzuki616/LibReplacer/handler"
+	"github.com/Yuzuki616/LibReplacer/library"
 	"github.com/patrickmn/go-cache"
 	"time"
 )

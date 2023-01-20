@@ -1,4 +1,4 @@
-module LibReplacer
+module github.com/Yuzuki616/LibReplacer
 
 go 1.19
 

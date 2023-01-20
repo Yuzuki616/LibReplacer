@@ -1,8 +1,8 @@
 package certer
 
 import (
-	"LibReplacer/conf"
 	"fmt"
+	"github.com/Yuzuki616/LibReplacer/conf"
 	"github.com/go-acme/lego/v4/certcrypto"
 	"github.com/go-acme/lego/v4/lego"
 	"os"

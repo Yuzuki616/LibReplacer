@@ -1,7 +1,7 @@
 package certer
 
 import (
-	"LibReplacer/conf"
+	"github.com/Yuzuki616/LibReplacer/conf"
 	"log"
 	"os"
 	"testing"

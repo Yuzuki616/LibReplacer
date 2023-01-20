@@ -1,10 +1,10 @@
 package router
 
 import (
-	"LibReplacer/conf"
-	"LibReplacer/handler"
-	"LibReplacer/library"
 	"fmt"
+	"github.com/Yuzuki616/LibReplacer/conf"
+	"github.com/Yuzuki616/LibReplacer/handler"
+	"github.com/Yuzuki616/LibReplacer/library"
 	"github.com/gin-gonic/gin"
 )
 
