@@ -32,9 +32,9 @@ jobs:
       - name: Checkout codebase
         uses: actions/checkout@v2
       - name: Set up Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
-          go-version: ^1.18
+          go-version: 'stable'
       - name: Get project dependencies
         run: go mod download
       - name: Get release version
@@ -58,10 +58,11 @@ jobs:
       - name: Create ZIP archive
         shell: bash
         run: |
-          pushd build_assets || exit 1
+          mkdir output
+          cd build_assets
           touch -mt $(date +%Y01010000) *
-          zip -9vr ../$OutName.zip .
-          popd || exit 1
+          zip -9vr ../output/$OutName.zip .
+          cd ../output
           FILE=./$OutName.zip
           DGST=$FILE.dgst
           for METHOD in {"md5","sha1","sha256","sha512"}
@@ -70,9 +71,8 @@ jobs:
           done
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
-        if: github.event_name == 'release'
         with:
-          repo_token: ${ { secrets.GITHUB_TOKEN } }
-          file: ./$OutName*
-          tag: ${ { github.ref } }
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./output/*
+          tag: ${{ github.ref }}
           file_glob: true
