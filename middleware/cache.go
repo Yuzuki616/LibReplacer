@@ -3,7 +3,6 @@ package middleware
 import (
 	"bytes"
 	"crypto/sha1"
-	"encoding/hex"
 	"github.com/gin-gonic/gin"
 	"github.com/patrickmn/go-cache"
 	"net/http"
@@ -60,7 +59,7 @@ func (w *CacheWriter) SetCache(key string) {
 
 func genHashString(data string) string {
 	s := sha1.Sum([]byte(data))
-	return hex.EncodeToString(s[:])
+	return string(s[:])
 }
 
 var blackList = []string{
@@ -77,7 +76,9 @@ func (m *Middleware) CacheResponse(c *gin.Context) {
 			return
 		}
 	}
-	q, _, _ := strings.Cut(c.Request.URL.RawQuery, "&X-")
+	tmp, _ := c.Params.Get("userid")
+	tmp = strings.Replace(c.Request.RequestURI, "/"+tmp, "", 1)
+	q, _, _ := strings.Cut(tmp, "&X-")
 	s := genHashString(q)
 	if b, e := m.cache.Get(s); e {
 		res := b.(*responseCache)
